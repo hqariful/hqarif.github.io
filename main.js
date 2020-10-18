@@ -16,7 +16,7 @@ function start() {
   const dim = document.createElement("input");
   dim.placeholder = "value to find";
   dim.style.position = "absolute";
-  dim.style.top = 150 + "px";
+  dim.style.top = 160 + "px";
   dim.style.left = 25 + "px";
   document.body.appendChild(dim);
 
