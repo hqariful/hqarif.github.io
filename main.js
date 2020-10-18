@@ -1,12 +1,26 @@
-import {result} from "./result.js"
-import {display} from "./display.js"
+import {confirm} from "./confirm.js"
+
 document.getElementById("btn").addEventListener("click", function() {
   start()
 });
 function start() {
+  //creating Array
   const n = document.getElementById("n").value;
   const a = new Array(n);
   for (let i = 0; i < n; i++) a[i] = new Array(n + 1);
+
+  //type of interpolation
+  const typ = document.getElementById("i_type");
+
+  //taking value to find
+  const dim = document.createElement("input");
+  dim.placeholder = "value to find";
+  dim.style.position = "absolute";
+  dim.style.top = 150 + "px";
+  dim.style.left = 25 + "px";
+  document.body.appendChild(dim);
+
+  //x and y
   const d = document.createElement("input");
   d.type = "number";
   const tx = document.createElement("label");
@@ -21,6 +35,8 @@ function start() {
   ty.style.left = 5 + "px";
   ty.innerHTML = "y:";
   document.body.appendChild(ty);
+
+  //taking computed input
   var z = [];
   var y = 0;
   for (let j = 0; j < n; j++)
@@ -33,30 +49,20 @@ function start() {
       document.body.appendChild(z[y]);
       y = y + 1;
     }
-  const dim = document.createElement("input");
-  dim.placeholder = "value to find";
-  dim.style.position = "absolute";
-  dim.style.top = 150 + "px";
-  dim.style.left = 25 + "px";
-  document.body.appendChild(dim);
+
+  //creating confirm button
   const btn = document.createElement("button");
   btn.style.position = "absolute";
   btn.style.top = 230 + "px";
   btn.style.left = n * 40 + 25 + "px";
   btn.innerHTML = "submit";
-  btn.onclick = confirm;
+  btn.onclick = ys;
   document.body.appendChild(btn);
-  function confirm() {
-    let y = 0;
-    for (let i = 0; i < n; i++)
-      for (let j = 0; j < 2; j++) {
-        a[i][j] = parseFloat(z[y].value);
-        y = y + 1;
-      }
-    for (let j = 1; j < n; j++)
-      for (let i = 0; i < n - j; i++)
-        a[i][j + 1] = a[i + 1][j] - a[i][j];
-    result(n, a, dim.value);
-    display(n, a);
+  function ys(){
+    confirm(n,z,a,dim.value,typ.value)
   }
+  // <option value="2">Lagrange</option>
+  //   <option value="3">Bessel</option>
+  //   <option value="4">Striling</option>
+  //   <option value="5">Gauss Central Diff.</option>
 }
