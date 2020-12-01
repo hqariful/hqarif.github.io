@@ -1,0 +1,16 @@
+body {
+  background-color: black;
+  color: white;
+}
+input {
+  background-color: gray;
+  color: white;
+}
+button {
+  background-color: gray;
+  color: white;
+}
+select {
+  background-color: gray;
+  color: white;
+}
