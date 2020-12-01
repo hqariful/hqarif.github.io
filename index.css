@@ -14,3 +14,6 @@ select {
   background-color: gray;
   color: white;
 }
+::placeholder {
+  color: white;
+}
