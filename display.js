@@ -1,4 +1,4 @@
-export function display(n, a) {
+export function display(n, a, typ) {
   const tx = document.createElement("p");
   tx.style.color = "red";
   const m = [];
@@ -27,11 +27,17 @@ export function display(n, a) {
     m[r].style.position = "absolute";
     m[r].style.top = 270 + "px";
     m[r].style.left = 20 + j * 50 + "px";
-    m[r].innerHTML = `&#916<sup>${j - 1}</sup>y`;
+    if(typ=="1"||typ=="0")
+      m[r].innerHTML = `&#916<sup>${j - 1}</sup>y`;
+    if(typ=="2")
+      m[r].innerHTML = `&#916<sup>${j - 1}</sup>y`
     document.body.appendChild(m[r]);
   }
 
   //main element of triangle
+
+  //type 0,1
+  if(typ=="1"||typ=="0"){
   const d = document.createElement("p");
   let y = 0;
   const z = [];
@@ -46,4 +52,10 @@ export function display(n, a) {
       document.body.appendChild(z[y]);
       y = y + 1;
     }
+  }
+  //type 2
+  if(typ=="2"){
+    const d = document.createElement("p");
+  }
+
 }

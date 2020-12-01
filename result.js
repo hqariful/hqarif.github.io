@@ -20,6 +20,23 @@ export function result(n, a, x, typ) {
     out = out + `×${a[n-i][i]}+`;
   }
   }
+
+  //type 2
+  if(typ=="2"){
+    var p;
+    for(let j=0;j<n;j++){
+        p=1;
+        for(let i=0;i<n;i++){
+            if(i!=j){
+            p=p*(x-a[i][0])/(a[j][0]-a[i][0]);
+            }
+        }
+        p=p*a[j][1];
+        sum=sum+p;
+        out = out+`${sum}+`
+    }
+  }
+
   const d = document.createElement("p");
   d.style.position = "absolute";
   d.style.top = 250+50*n + "px";

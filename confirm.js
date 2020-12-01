@@ -21,9 +21,15 @@ export function confirm(n,z,a,q,typ) {
       for (let j = 1; j < n; j++)
       for (let i = 0; i < n - j; i++)
         a[i][j + 1] = a[i + 1][j] - a[i][j];
+
+      //main calculation
+    display(n, a, typ);
+    result(n, a, q, typ);
+    }
+    //type 2
+    if(typ=="2"){
+      result(n, a, q, typ);
     }
     
-    //main calculation
-    display(n, a);
-    result(n, a, q, typ);
+    
   }

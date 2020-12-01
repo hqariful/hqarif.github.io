@@ -61,7 +61,6 @@ function start() {
   function ys(){
     confirm(n,z,a,dim.value,typ.value)
   }
-  // <option value="2">Lagrange</option>
   //   <option value="3">Bessel</option>
   //   <option value="4">Striling</option>
   //   <option value="5">Gauss Central Diff.</option>
