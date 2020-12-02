@@ -27,17 +27,17 @@ export function display(n, a, typ) {
     m[r].style.position = "absolute";
     m[r].style.top = 270 + "px";
     m[r].style.left = 20 + j * 50 + "px";
-    if(typ=="1"||typ=="0")
+    if(typ=="0")
       m[r].innerHTML = `&#916<sup>${j - 1}</sup>y`;
-    if(typ=="2")
-      m[r].innerHTML = `&#916<sup>${j - 1}</sup>y`
+    if(typ=="1")
+      m[r].innerHTML = `&#8711<sup>${j - 1}</sup>y`
     document.body.appendChild(m[r]);
   }
 
   //main element of triangle
 
   //type 0,1
-  if(typ=="1"||typ=="0"){
+  if(typ=="1"||typ=="0"||typ=="6"){
   const d = document.createElement("p");
   let y = 0;
   const z = [];
