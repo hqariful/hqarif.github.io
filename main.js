@@ -59,7 +59,14 @@ function start() {
   btn.onclick = ys;
   document.body.appendChild(btn);
   function ys(){
+    btn.innerHTML = "reload";
+    btn.onclick = rl;
+    document.body.appendChild(btn)
+    
     confirm(n,z,a,dim.value,typ.value)
+  }
+  function rl(){
+    location.reload()
   }
   //   <option value="3">Bessel</option>
   //   <option value="4">Striling</option>

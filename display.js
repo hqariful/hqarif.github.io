@@ -56,10 +56,8 @@ export function display(n, a, typ) {
       if(j>1) off=15*(j-1);    //offset of triangle
       z[y].style.top = 300 + i * 30 + off + "px";
       z[y].style.left = 20 + j * 50 + "px";
-      console.log('it happened')
       if(!Number.isInteger(a[i][j])&&a[i][j].countDecimals()>4){
         z[y].innerHTML = a[i][j].toExponential(2);
-        console.log('success')
       }
       else
         z[y].innerHTML = a[i][j].toString();
