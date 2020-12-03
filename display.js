@@ -27,7 +27,7 @@ export function display(n, a, typ) {
     m[r].style.position = "absolute";
     m[r].style.top = 270 + "px";
     m[r].style.left = 20 + j * 50 + "px";
-    if(typ=="0")
+    if(typ=="0"||typ=="6")
       m[r].innerHTML = `&#916<sup>${j - 1}</sup>y`;
     if(typ=="1")
       m[r].innerHTML = `&#8711<sup>${j - 1}</sup>y`
