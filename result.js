@@ -23,7 +23,7 @@ export function result(n, a, x, typ) {
 
   //type 2
   if(typ=="2"){
-    var p;
+    let p;
     for(let j=0;j<n;j++){
         p=1;
         for(let i=0;i<n;i++){
@@ -34,6 +34,17 @@ export function result(n, a, x, typ) {
         p=p*a[j][1];
         sum=sum+p;
         out = out+`${sum}+`
+    }
+  }
+
+  //type 6
+  if(typ=="6"){
+    let p;
+    for(let j=1;j<=n;j++){
+      p=1;
+      for(let i=0;i<j-1;i++)
+        p=p*(x-a[i][0])
+      sum=sum+p*a[0][j]
     }
   }
 
