@@ -40,13 +40,16 @@ export function display(n, a, typ) {
   if(typ=="1"||typ=="0"||typ=="6"){
   const d = document.createElement("p");
   let y = 0;
+  let off;
   const z = [];
   for (let i = 0; i < n; i++)
     for (let j = 0; j <= n; j++) {
       if (i + j > n) continue;
+      off=1;
       z[y] = d.cloneNode("true");
       z[y].style.position = "absolute";
-      z[y].style.top = 300 + i * 30 + "px";
+      if(j>1) off=15*(j-1);
+      z[y].style.top = 300 + i * 30 + off + "px";
       z[y].style.left = 20 + j * 50 + "px";
       z[y].innerHTML = a[i][j].toString();
       document.body.appendChild(z[y]);
