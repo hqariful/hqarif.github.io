@@ -34,6 +34,11 @@ export function display(n, a, typ) {
     document.body.appendChild(m[r]);
   }
 
+  //count the number of decimals
+  Number.prototype.countDecimals = function () {
+    if(Math.floor(this.valueOf()) === this.valueOf()) return 0;
+    return this.toString().split(".")[1].length || 0; 
+}
   //main element of triangle
 
   //type 0,1
@@ -48,10 +53,16 @@ export function display(n, a, typ) {
       off=1;
       z[y] = d.cloneNode("true");
       z[y].style.position = "absolute";
-      if(j>1) off=15*(j-1);
+      if(j>1) off=15*(j-1);    //offset of triangle
       z[y].style.top = 300 + i * 30 + off + "px";
       z[y].style.left = 20 + j * 50 + "px";
-      z[y].innerHTML = a[i][j].toString();
+      console.log('it happened')
+      if(!Number.isInteger(a[i][j])&&a[i][j].countDecimals()>4){
+        z[y].innerHTML = a[i][j].toExponential(2);
+        console.log('success')
+      }
+      else
+        z[y].innerHTML = a[i][j].toString();
       document.body.appendChild(z[y]);
       y = y + 1;
     }
